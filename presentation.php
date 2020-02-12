@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+  <style>
+
+    .edit{
+      display :flex;
+      justify-content :center;
+      align-items : center;
+      
+    }
+    fieldset {
+      width: 80px;
+      /* margin-right: 40px; */
+    }
+    .upload-file{
+      /* margin-left : 40px; */
+      
+    }
+    .fontstyle {
+      width: 5ex;
+      text-align: center;
+      padding: 1px 3px;
+    }
+    [contenteditable=true]:empty:before{
+      content: attr(placeholder);
+      display: block; 
+    }
+    div[contenteditable=true] {
+      border: 1px dashed #AAA;
+      width: 500px;
+      height : 200px;
+      padding: 5px;
+      margin: auto;
+    }
+  </style>
+</head>
+
 <form action="formsub.php" method="post">
 <div id="bigsec">
   <br></br>
@@ -22,8 +58,24 @@
           document.getElementById('ques_count').value=count+1;
 		  <\/script>
 
-
-          <input type="text" id="question`+$('[id^=sec]').length+`" name="question`+$('[id^=sec]').length+`">
+      <div class = "edit">
+        <fieldset>
+          <button class="fontStyle" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"><i>I</i>
+          </button>
+          <button class="fontStyle" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"><b>B</b>
+          </button>
+          <button class="fontStyle" onclick="document.execCommand( 'underline',false,null);"><u>U</u>
+          </button>
+        </fieldset>
+        <div class = "upload-file">
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile"><br><br>
+            
+        </div>
+      </div>
+      <div id="question`+$('[id^=sec]').length+`" name="question`+$('[id^=sec]').length+`" contenteditable = "true" placeholder = "Enter question here ... "> 
+      </div>
+          
 
           <br></br>
           <p>Options</p>
