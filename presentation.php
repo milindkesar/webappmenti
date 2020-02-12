@@ -3,7 +3,9 @@
 
 <head>
   <style>
-
+    body {
+      background : #f4f4f4;
+    }
     .edit{
       display :flex;
       justify-content :center;
@@ -37,15 +39,17 @@
   </style>
 </head>
 
-<form action="formsub.php" method="post">
-<div id="bigsec">
-  <br></br>
-  <button type="button" onclick="myfunction2()">add question</button>
-  <input type="text" id="ques_count" hidden="true" value="0">
-</div>
-<hr>
-<button type="submit">Submit</button>
-</form>
+<body>
+    <form action="formsub.php" method="post">
+    <div id="bigsec">
+      <br></br>
+      <button type="button" onclick="myfunction2()">add question</button>
+      <input type="text" id="ques_count" hidden="true" value="0">
+    </div>
+    <hr>
+    <button type="submit">Submit</button>
+    </form>
+</body>
 
 <script>
   function myfunction2(){
