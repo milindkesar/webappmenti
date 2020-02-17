@@ -87,7 +87,11 @@
           <button type="button" onclick="option_adder(`+$('[id^=sec]').length+`)">add option</button>
           <br></br>
           <p>Correct Choice</p>
-          <input type="text" id="choice`+$('[id^=sec]').length+`" name="choice`+$('[id^=sec]').length+`">
+
+          <div id="choice`+$('[id^=sec]').length+`">
+              <input type="text" name="choice`+$('[id^=sec]').length+`">
+              <input type="file" name="choice`+$('[id^=sec]').length+`">
+          </div>
           </div>`
 
     $("#bigsec").append(html_text);
@@ -96,9 +100,21 @@
 
 <script>
     function option_adder(ques_no){
-    var html_var='<input type="text" id="sec'+ques_no+'option'+$('[id^=sec'+ques_no+'option]').length+'" name="sec'+ques_no+'option'+$('[id^=sec'+ques_no+'option]').length+'">'
-  $("#sec"+ques_no).append(html_var);
+    var html_var = 
+    '<div '+ 'id="sec' + ques_no + 'option' + $('[id^=sec'+ques_no+'option]').length+ '"'    +'>'+  
+      '<input type = "text" ' + 'name="sec' + ques_no + 'option' + $('[id^=sec'+ques_no+'option]').length+ '"'   +  '>'  +
+      '<input type = "file" ' + 'name="sec' + ques_no + 'option' + $('[id^=sec'+ques_no+'option]').length+ '"'   +  '>'  
+    +'</div>' ;
+    $("#sec"+ques_no).append(html_var);
     }
+
+
+
+
+  //   function option_adder(ques_no){
+  //   var html_var='<input type="text" id="sec'+ques_no+'option'+$('[id^=sec'+ques_no+'option]').length+'" name="sec'+ques_no+'option'+$('[id^=sec'+ques_no+'option]').length+'">'
+  // $("#sec"+ques_no).append(html_var);
+  //   }
 </script>
 
 
